@@ -18,5 +18,10 @@ npm install cron
 
 * First, You need Node JS v8.0+ To be installed
 * Clone this Github Repo and then run `npm init -y` in the home directory to create a package.json
-* Then install the above [dependencies]()
+* Then install the above [dependencies](https://github.com/White2001Offl/Covid-Tracker-Discord-Bot/blob/master/README.md#dependencies)
+* If you face error while installing `quick.db` Check the below [Error Fixes]()
+
+
+## Error Fixes
+
 
