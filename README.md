@@ -64,3 +64,6 @@ Discord - `White2001#0530`
 
 
 Telegram - `@WhiteGrim_Nulled`
+
+
+Discord Server - `https://discord.gg/dwSDNhE`
