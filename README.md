@@ -46,13 +46,13 @@ Stuff before installation:
 
 3- Click "Run as Administrator"
 
-4- When the terminal is opened type npm install --global windows-build-tools --vs2015 in it and the installation will start. (Sometimes this can take long)
+4- When the terminal is opened type "npm install --global windows-build-tools --vs2015" (without quotes) in it and the installation will start. (Sometimes this can take long)
 
 5- When the installation is finished you can close the terminal.
 
 6- Now you must go to the directory where you want to install Quick.db.
 
-7- Then write npm install quick.db
+7- Then write "npm install quick.db"
 
 Credit to Zelak & Mio for this guide.
 ```
