@@ -13,3 +13,10 @@ npm install cron
 
 **These are the dependencies required to run this BOT**
 
+
+## Setup
+
+* First, You need Node JS v8.0+ To be installed
+* Clone this Github Repo and then run `npm init -y` in the home directory to create a package.json
+* Then install the above [dependencies]()
+
