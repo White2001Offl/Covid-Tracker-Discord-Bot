@@ -25,6 +25,11 @@ npm install cron
 * Then run `node bot.js` And All should work fine
 
 
+## Features
+* It can do Auto Post in the specific channel which you provide in `config` command i.e., World Stats and the country Stats which you opted in `config` command.
+* You can change to your wish. Check the [crontab](https://crontab.guru/) Website on how to use the time.
+
+
 ## Error Fixes
 * **If you face error while installing `quick.db` Check the below TroubleShoot**
 
