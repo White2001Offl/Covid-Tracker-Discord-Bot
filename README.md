@@ -64,6 +64,9 @@ Stuff before installation:
 Credit to Zelak & Mio for this guide.
 ```
 
+<img src="https://media.discordapp.net/attachments/724873032522268714/744780760527142942/Untitled.png?width=821&height=671">
+* if you face the above error. Check this [issue](https://github.com/npm/npm/issues/13461) It might work anyone.
+
 **If you still Face any issue. Message me.**
 
 ## Contact
