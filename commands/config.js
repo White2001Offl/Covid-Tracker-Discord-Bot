@@ -42,7 +42,7 @@ module.exports = {
                 return new Discord.MessageEmbed()
                     .setColor(`${col}`)
                     .setTitle(`${message.guild.name} Configuration`)
-                    .addField(`${prefix}config country <CountryCode>`, `\`\`\`${server.country}\`\`\``)
+                    .addField(`${prefix}config country <CountryCode1,CountryCode2,......>`, `\`\`\`${server.country || 'None'}\`\`\``)
                     .addField(`${prefix}config channel <ChannelID>`, `\`\`\`${server.channel}\`\`\``)
                     .setTimestamp()
                     .setFooter('White2001#0530');
@@ -60,36 +60,48 @@ module.exports = {
                 }
                 return message.channel.send(e_invalid())
             }
+            var country = data2.split(',');
+            var errors = []
+            var valid = []
+            console.log(country)
             const options = {
                 method: 'GET',
             }
-            await fetch(`https://api.thevirustracker.com/free-api?countryTimeline=${data2}`, options)
-                .then(async res => await res.json())
-                .then(async json => {
-                    if (json.results) {
-                        function e_invalid() {
-                            return new Discord.MessageEmbed()
-                                .setColor('#d40808')
-                                .setDescription(`Invalid Country Code.\nPlease recheck and try again`)
-                                .setTimestamp()
-                                .setFooter('White2001#0530');
+            for (var i = 0; i < country.length; i++) {
+                await fetch(`https://api.thevirustracker.com/free-api?countryTimeline=${country[i]}`, options)
+                    .then(async res => await res.json())
+                    .then(async json => {
+                        if (json.results) {
+                            errors[errors.length] = country[i]
                         }
-                        return message.channel.send(e_invalid())
-                    }
-                    else {
-                        db.set(`${message.guild.id}.country`, `${data2}`)
-                        db.set(`${message.guild.id}.timestamp`, `${Math.floor(new Date().getTime() / 1000) + 3600}`)
-                        function e_invalid() {
-                            let col = randomHex.generate()
-                            return new Discord.MessageEmbed()
-                                .setColor(`${col}`)
-                                .setDescription(`Data Updated Successfully :white_check_mark:`)
-                                .setTimestamp()
-                                .setFooter('White2001#0530');
+                        else {
+                            valid[valid.length] = country[i]
                         }
-                        return message.channel.send(e_invalid())
-                    }
-                })
+                    })
+            }
+            if (valid.length > 0) {
+                var valids = valid.join()
+                db.set(`${message.guild.id}.country`, `${valids}`)
+                function e_invalid() {
+                    let col = randomHex.generate()
+                    return new Discord.MessageEmbed()
+                        .setColor(`${col}`)
+                        .setDescription(`Data Updated Successfully :white_check_mark:\nThese are the data added \`${valid.join()}\``)
+                        .setTimestamp()
+                        .setFooter('White2001#0530');
+                }
+                message.channel.send(e_invalid())
+            }
+            if (errors.length > 0) {
+                function e_invalid() {
+                    return new Discord.MessageEmbed()
+                        .setColor('#d40808')
+                        .setDescription(`Some Invalid Country Codes Entered, which was removed.\nHere are those \`${errors.join()}\``)
+                        .setTimestamp()
+                        .setFooter('White2001#0530');
+                }
+                message.channel.send(e_invalid())
+            }
         }
         else if (command1 === 'channel') {
             if (!data2) {
