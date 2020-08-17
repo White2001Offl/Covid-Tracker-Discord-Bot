@@ -28,6 +28,8 @@ npm install cron
 ## Features
 * It can do Auto Post in the specific channel which you provide in `config` command i.e., World Stats and the country Stats which you opted in `config` command.
 * You can change to your wish. Check the [crontab](https://crontab.guru/) Website on how to use the time.
+* Now, You can add More than 1 country in your config. More countries = More time it takes to validate each country code. I recommend to add till 3 for best.
+* By default its set to send a message for every 6 hours.
 
 
 ## Error Fixes
