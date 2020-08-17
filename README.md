@@ -1,6 +1,9 @@
 # Covid-Tracker-Discord-Bot
 A user friendly Discord Bot to track down Covid Cases.
 
+## Covid-Tracker-Discord-Bot-File-Based
+**Check [Releases Section](https://github.com/White2001Offl/Covid-Tracker-Discord-Bot/releases)**
+
 
 ## Dependencies
 ```javascript
