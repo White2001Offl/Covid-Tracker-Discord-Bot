@@ -22,7 +22,7 @@ module.exports = {
         }
 
         if (!db.has(`${message.guild.id}`)) {
-            db.set(`${message.guild.id}`, { country: 'None', channel: 'None', webhookID: 'None', webhookToken: 'None' })
+            db.set(`${message.guild.id}`, { channel: 'None', webhookID: 'None', webhookToken: 'None' })
             let col = randomHex.generate()
             function e_invalid() {
                 return new Discord.MessageEmbed()
